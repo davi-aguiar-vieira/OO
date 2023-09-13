@@ -1,0 +1,54 @@
+● Objetivo:
+– Projetar um pequeno universo interativo dentro do qual seja possível registrar formas geométricas bidimensionais 
+úteis para verificações e cálculos simples.
+
+1. **Classe FormaGeometrica:**
+   - Atributo: tipo (círculo, retângulo, triângulo, linha)
+   - Método `__init__(self, tipo)`: Inicializa uma forma com o tipo especificado.
+   - Método `calcularArea(self)`: Este método será sobrescrito pelas subclasses para calcular a área da forma.
+   - Método `calcularPerimetro(self)`: Este método será sobrescrito pelas subclasses para calcular o perímetro da forma.
+
+2. **Classe Circulo:**
+   - Herda de FormaGeometrica
+   - Atributo: raio
+   - Método `__init__(self, raio)`: Inicializa um círculo com o raio especificado.
+   - Método `calcularArea(self)`: Calcula a área do círculo usando a fórmula A = π * raio^2.
+   - Método `calcularPerimetro(self)`: Calcula o perímetro do círculo usando a fórmula P = 2 * π * raio.
+
+3. **Classe Retangulo:**
+   - Herda de FormaGeometrica
+   - Atributos: comprimento, largura
+   - Método `__init__(self, comprimento, largura)`: Inicializa um retângulo com comprimento e largura especificados.
+   - Método `calcularArea(self)`: Calcula a área do retângulo usando a fórmula A = comprimento * largura.
+   - Método `calcularPerimetro(self)`: Calcula o perímetro do retângulo usando a fórmula P = 2 * (comprimento + largura).
+
+4. **Classe Triangulo:**
+   - Herda de FormaGeometrica
+   - Atributos: base, altura
+   - Método `__init__(self, base, altura)`: Inicializa um triângulo com base e altura especificadas.
+   - Método `calcularArea(self)`: Calcula a área do triângulo usando a fórmula A = (base * altura) / 2.
+   - Método `calcularPerimetro(self)`: Não é possível calcular o perímetro do triângulo com base e altura apenas.
+
+5. **Classe Linha:**
+   - Herda de FormaGeometrica
+   - Atributo: comprimento
+   - Método `__init__(self, comprimento)`: Inicializa uma linha com o comprimento especificado.
+   - Método `calcularArea(self)`: Linha não tem área, então retorna 0.
+   - Método `calcularPerimetro(self)`: Calcula o perímetro da linha, que é igual ao comprimento.
+
+**Função principal():**
+
+- Inicializa uma lista vazia para armazenar as formas (ListaDeFormas).
+- Entra em um loop infinito até que o usuário decida sair.
+- Mostra um menu de opções para o usuário (inserir nova forma, calcular área e perímetro, sair).
+- Lê a escolha do usuário.
+- Se a escolha for "inserir nova forma":
+  - Pergunta ao usuário pelo tipo de forma (círculo, retângulo, triângulo, linha).
+  - Com base no tipo, cria uma instância da classe apropriada com os atributos necessários.
+  - Adiciona a forma à ListaDeFormas.
+- Se a escolha for "calcular área e perímetro":
+  - Para cada forma na ListaDeFormas:
+    - Mostra o tipo da forma.
+    - Calcula e mostra a área da forma usando o método `calcularArea()`.
+    - Calcula e mostra o perímetro da forma usando o método `calcularPerimetro()`.
+- Se a escolha for "sair", encerra o programa.
